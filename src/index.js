@@ -51,23 +51,29 @@ async function rollDice(){
 
 async function getRandomBlock() { 
     let random = Math.random();
-    let result;
+    let result
 
-    swith(key){ 
-		case value:
+    switch(true){ 
+		case random < 0.33:
+			result = "RETA"
 			break;
-
+		case random < 0.66:
+			result = "CURVA"
+			break;
 		default:
-			break;
-    }
+			result= "CONFRONTO"
+	}
+	return result
 }
+
 async function playRaceEngine(character1, character2) {
     
     for (let i = 0; i <= 5; i++) { 
         console.log(`🏁Rodada ${i}`);
 
         //sortear bloco
-        let block = 
+		let block = await getRandomBlock()
+		console.log(`Bloco: ${block}`);
     }
 }
 
